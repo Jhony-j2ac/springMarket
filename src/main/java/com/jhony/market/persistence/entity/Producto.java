@@ -12,7 +12,8 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idProducto;
 
-    private String name;
+    @Column(length = 45)
+    private String nombre;
     @Column(name = "id_categoria")
     private Integer idCategoria;
 
@@ -22,7 +23,7 @@ public class Producto {
     @Column(name = "precio_venta")
     private Integer precioVenta;
 
-    @Column(name= "cantidad_stick")
+    @Column(name= "cantidad_stock")
     private Integer cantidadStock;
 
     private Boolean estado;
@@ -39,12 +40,12 @@ public class Producto {
         this.idProducto = idProducto;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public Integer getIdCategoria() {
@@ -86,4 +87,14 @@ public class Producto {
     public void setEstado(Boolean estado) {
         this.estado = estado;
     }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+
 }
